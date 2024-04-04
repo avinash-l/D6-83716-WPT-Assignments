@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Sunbeam</title>
+    <style>
+        .container{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            width:1200px ;
+            height: 500px;
+            margin: auto;
+        }
+        td{
+            border: 1px solid black;
+            width: 500px;
+
+        }
+        input{
+            padding: 5px;
+        }
+        </style>
+</head>
+
+<body>
+    <h1><center>Registration Form</center></h1>
+<div class="container">
+    <div style="width:600px; background-color: cornsilk;">
+        <video height="400" width="500px" controls>
+            <source src="sunbeam.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+    </div>  
+    <div style=" background-color:azure ">
+    <table style="border: 1px solid black; height: 500px;">
+        <tr >
+            <td>Enter Your Name:</td>
+            <td><input type="text" placeholder="Enter Name "></td>
+        </tr>
+        <tr>
+            <td>Enter Birth Date:</td>
+            <td><input type="text" placeholder="Birth Date "></td>
+        </tr>
+        <tr>
+            <td>Email:</td>
+            <td><input type="text" placeholder="abc@gmail.com "></td>
+        </tr>
+        <tr>
+            <td>Password:</td>
+            <td><input type="text" placeholder="***************"></td>
+        </tr>
+        <tr>
+            <td>Address:</td>
+            <td><select >
+                <option value="1">Maharashtra</option>
+                <option value="2">Telangana</option>
+                <option value="3">Karnataka</option>
+              </select>
+              <select >
+                <option value="1">Pune</option>
+                <option value="2">Ranchi</option>
+                <option value="3">Bengaluru</option>
+              </select>
+              <select >
+                <option value="1">Pune</option>
+                <option value="2">SRK</option>
+                <option value="3">ABC</option>
+              </select></td>
+            </td>
+        </tr>
+        <tr>
+            <td>Gender:</td>
+                <td><input type="radio" name="gender" value="1" /> Female
+                <input type="radio" name="gender" value="2" /> Male
+                <input type="radio" name="gender" value="3" /> Other</td>
+        </tr>
+        <tr>
+            <td>Upload Photo:</td>
+            <td><input type="file"  </td>
+        </tr>
+        <tr>
+            <td>Choose Course:</td>
+            <td><select >
+                <option value="1">PG-DAC</option>
+                <option value="2">PG-DBDA</option>
+                <option value="3">PG-DMC</option>
+              </select></td>
+        </tr>
+        <tr>
+            <td><center><input type="button" value="Register" /></center></td>
+            <td><center><input type="button" value="Clear`" /></center></td>
+        </tr>
+    </table>
+
+    </div>
+</div>
+</body>
+</html>
