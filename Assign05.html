@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<center>
+  <h1><u>Car Animation</u></h1>
+</center>
+
+<body>
+  <div id="myCar" style="width: 200px; ;position:absolute;left: -2px;top: 80px">
+    <img src="F1car.jpeg" alt="Image Problem" height="100px" width="200">
+  </div>
+  <div style="height: 40px;width: 600px;
+background-color: black;
+position: absolute;
+left: 0px;
+top: 150px;">
+  </div>
+  <div><br><br><br><br>
+    <table><br><br><br>
+      <tr>
+        <td>
+          <h2>X-Axis:<input type="text" value="0" id="xAxis" style="padding: 10px;"></h2>
+        </td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>
+          <h2>Y-Axis: <input type="text" value="0" id="yAxis" style="padding: 10px;"></h2>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <table>
+    <td><input type="button" style="width: 200px;height: 50px;" value="start" onclick="Start()" /></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td><input type="button" style="width: 200px;height: 50px;" value="stop" onclick="Stop()" /></td>
+  </table>
+  <div id="myBlock" style="width: 250px;height: 100px;position: absolute;opacity: 0;">
+    F1 Racing Car is Damaged.
+  </div>
+  <script>
+    var leftVal = -2;
+    var topVal = 80;
+    var arrayOfQueues = new Array();
+    function Start() {
+      var qNo = setInterval(KeepMoving, 1);
+      arrayOfQueues.push(qNo);
+    }
+    function Stop() {
+      for (var i = 0; i < arrayOfQueues.length; i++) {
+        var qToStop = arrayOfQueues[i];
+        clearInterval(qToStop);
+      }
+    }
+    function KeepMoving() {
+
+      var refTomyDiv = document.getElementById("myCar");
+      if (leftVal > 582) {
+        topVal = topVal + 1;
+        refTomyDiv.style.rotate=30 + "deg";
+        refTomyDiv.style.top = topVal + "px";
+        leftVal = leftVal + 1;
+        refTomyDiv.style.left = leftVal + "px";
+        var x = document.getElementById("xAxis");
+        x.value = leftVal + 2;
+        var y = document.getElementById("yAxis");
+        y.value = topVal - 80;
+
+        if (topVal == 400) {
+          refTomyDiv.style.opacity = .3;
+          var refmyBlock = document.getElementById("myBlock");
+          refmyBlock.style.left = (leftVal) + "px";
+          refmyBlock.style.top = topVal + "px";
+          refmyBlock.style.backgroundColor = "red";
+          refmyBlock.style.opacity = 0.5;
+          Stop();
+
+        }
+
+
+      }
+      else {
+        if (refTomyDiv != null) {
+          leftVal = leftVal + 1;
+          refTomyDiv.style.left = leftVal + "px";
+          var x = document.getElementById("xAxis");
+          x.value = leftVal + 2;
+          var y = document.getElementById("yAxis");
+          y.value = topVal - 80;
+        }
+      }
+    }
+
+  </script>
+
+</body>
+
+</html>
